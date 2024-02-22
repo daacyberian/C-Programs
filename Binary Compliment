@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+class Binary{
+
+    string number;
+
+  public:
+  void read();
+  void check();
+  void convert();
+  void Display();  
+
+};
+
+void Binary :: read() {
+    cout<<" Enter Your Binary Number "<<endl;
+    cin>>number;
+    check();
+}
+void Binary :: check() {
+    for (int i = 0; i < number.length(); i++)
+    {
+        if( number.at(i)!= '1' && number.at(i) != '0' )
+        {
+            cout<<"Incorrect Binary Number"<<endl;
+            exit(0);
+        }
+    }
+}
+void Binary :: convert() {
+    read();
+    for (int i = 0; i < number.length(); i++)
+    {
+        if(number.at(i)== '1')
+        {
+            number.at(i)= '0';
+        }
+        else
+        {
+            number.at(i)='1';
+        }
+    }
+}
+
+void Binary :: Display() {
+    convert();
+    for (int i = 0; i < number.at(i); i++)
+    {
+        cout<<number.at(i);
+    }
+    cout << endl;
+}
+
+int main(){
+
+    Binary num;
+    num.Display();
+
+return 0;
+}
